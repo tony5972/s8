@@ -1,0 +1,25 @@
+db.item.insert({itemName:"planner",tag:["wash","food","vehicle"]
+,status:"A",height:5,width:9,instack:15,warehouse:[{location:"pune",quantity:36},{location:"mumbai",quantity:67}]})
+
+db.item.insert({itemName:"toycar",tag:["food","vehicle"],
+status:"D",height:5,width:9,instack:15,warehouse:
+[{location:"pune",quantity:36},{location:"mumbai",quantity:67}]})
+
+db.item.insert({itemName:"robotic car",tag:["food","vehicle"], status:"A",height:9,width:9,instack:5, 
+warehouse:[{location:"pune",quantity:26},
+{location:"mumbai",quantity:17}]})
+
+
+
+a) > 
+db.item.find({status:"D","warehouse.quantity":{$gt:30}})
+
+b) > 
+db.item.find({"tag":{$size:3}})
+
+c) >
+db.item.find({$or:[{status:"A"},{"warehouse.quantity":{$lt:30},
+height:{$gt:10}}]})
+
+d) > 
+db.item.find({itemName:"planner",instack:{$lt:20}})
